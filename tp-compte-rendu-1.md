@@ -42,7 +42,7 @@ utilisateur par défaut:
 
 commande:
 
-* docker run -d --hostname my-rabbit --name some-rabbit -p 8080:15672 rabbitmq:3-management
+* docker run -d --restart always --hostname rabbitmq-perso --name rabbitmq-perso -p 8080:15672 rabbitmq:3-management
 
 ## Flask
 
