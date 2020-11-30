@@ -44,11 +44,20 @@ on constate que graphviz est bien installé avec :
 * apk info graphviz
 
 
-# API docker en Python
+## API docker en Python
 
 1) installation du module docker
 * pip3 install docker
 
-2) exécuter un conteneur simple
+2) 3) 4) 5) voir script
+
+## API GIT en Python
+Installation de la bilbiothèque
+1)
+
+* sudo apt install git
+* pip3 install gitpython
 
 
+
+2) script non fonctionnelle
