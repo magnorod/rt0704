@@ -1,0 +1,5 @@
+FROM alpine-perso:latest
+
+RUN apk add graphviz --no-cache
+
+CMD

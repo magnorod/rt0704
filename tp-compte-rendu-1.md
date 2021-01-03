@@ -7,7 +7,7 @@
 * ssh-copy-id -i ~/.ssh/id_rsa.pub user@172.18.10.20
 
 ### vérif de python3, pip3 et virtualenv
-* sudo apt-get install python3 -y && sudo apt-get install python3-pip -y && sudo pip install virtualenv
+* sudo apt-get install python3 -y && sudo apt-get install python3-pip -y && sudo pip3 install virtualenv
 
 ### création du script hello-world
 

@@ -9,10 +9,10 @@ création du docker file
 
 Construction de notre image perso via le Dockerfile
 
-* docker build -t debian-perso .
+* docker build -t alpie-perso .
 1)2 et 3)
 Lancement du conteneur avec forward de port
-* docker run -it --hostname debian-tp2 --name debian-tp2  -p 2222:22 debian-perso /bin/bash
+* docker run -it --hostname alpine-tp2 --name alpine-tp2  -p 2222:22 alpine-perso /bin/ash
 
 lancement manuel du service ssh
 * service ssh start

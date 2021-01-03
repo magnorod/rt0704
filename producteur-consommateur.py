@@ -9,7 +9,7 @@ def creationFileNommee(connection, queue_name):
 
 def ecritureSimpleFile(channel, queue_name, message):
     channel.basic_publish(exchange='',routing_key=queue_name,body=message)
-    print("message envoyé : {}".format(message))
+    print("message envoye : {}".format(message))
 
 
 def lectureSimpleFile(channel, queue_name):
@@ -22,7 +22,7 @@ def lectureSimpleFile(channel, queue_name):
 
 
 if __name__ == "__main__":
-    host='172.17.0.3'
+    host='172.17.0.2'
     queue_name='file-perso1'
 
     connection = pika.BlockingConnection(pika.ConnectionParameters(host=host))
