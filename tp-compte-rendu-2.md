@@ -59,5 +59,4 @@ Installation de la bilbiothèque
 * pip3 install gitpython
 
 
-
-2) script non fonctionnelle
+2) voir script-git.py
