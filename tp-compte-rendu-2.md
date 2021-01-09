@@ -60,3 +60,4 @@ Installation de la bilbiothèque
 
 
 2) voir script-git.py
+git submodule add https://github.com/magnorod/rt0704
