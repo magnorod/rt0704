@@ -261,7 +261,45 @@ pip3 install flask pika --no-cache-dir
 
 ```
 
+```
+#!/usr/bin/python3
+import pika
 
+def creationFileNommee(connection, nom_file):
+    channel = connection.channel()
+    channel.queue_declare(nom_file)
+    return channel
+
+def ecritureSimpleFile(channel, nom_file, message):
+    channel.basic_publish(exchange='', routing_key=nom_file, body=message)
+    print("message envoyé : {}".format(message))
+
+def lectureSimpleFile(channel, nom_file):
+    method_frame, header_frame, body = channel.basic_get(nom_file)
+    if method_frame:
+        print(method_frame, header_frame, body)
+        channel.basic_ack(method_frame.delivery_tag)
+    else:
+        print("rien à lire")
+    #endif
+
+
+if __name__ == "__main__":
+    ip_rabbitmq="172.17.0.2"
+    nom_file="Test"
+    msg="Bonjour"
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host=ip_rabbitmq))
+    channel = creationFileNommee(connection, nom_file)
+    ecritureSimpleFile(channel, nom_file, msg)
+    lectureSimpleFile(channel, nom_file)
+    connection.close
+```
+
+```
+user@vm-rt0704:~/projet/projet-flask/script$ python3 script-rabbitmq.py 
+message envoyé : Bonjour
+<Basic.GetOk(['delivery_tag=1', 'exchange=', 'message_count=0', 'redelivered=False', 'routing_key=Test'])> <BasicProperties> b'Bonjour'
+```
 
 ### DockerFile
 `vi Dockerfile`
